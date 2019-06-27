@@ -10,6 +10,9 @@ import UIKit
 
 class SellViewController: UIViewController {
 
+    // MARK: - Properties
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

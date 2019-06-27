@@ -98,6 +98,9 @@
                     <navigationItem key="navigationItem" title="Продажа" id="Hos-9i-t4b">
                         <barButtonItem key="rightBarButtonItem" title="Фильтровать" id="2r2-Oq-5ln"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="NMf-WL-9s9" id="0IY-n3-Dp5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

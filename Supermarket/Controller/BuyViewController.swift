@@ -12,6 +12,7 @@ class BuyViewController: UIViewController {
 
     // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
+    var viewModel: BuyViewModel!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
