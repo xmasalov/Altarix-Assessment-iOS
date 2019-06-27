@@ -33,6 +33,9 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <navigationItem key="navigationItem" title="Покупка" id="3wT-Rp-7QT"/>
+                    <connections>
+                        <outlet property="tableView" destination="VOJ-20-6us" id="HBD-z9-GXf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
