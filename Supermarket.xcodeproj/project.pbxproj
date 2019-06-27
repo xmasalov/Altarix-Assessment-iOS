@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9687FB9D22C4F16B004E68E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FB9C22C4F16B004E68E9 /* AppDelegate.swift */; };
-		9687FB9F22C4F16B004E68E9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FB9E22C4F16B004E68E9 /* FirstViewController.swift */; };
-		9687FBA122C4F16B004E68E9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FBA022C4F16B004E68E9 /* SecondViewController.swift */; };
+		9687FB9F22C4F16B004E68E9 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FB9E22C4F16B004E68E9 /* BuyViewController.swift */; };
+		9687FBA122C4F16B004E68E9 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FBA022C4F16B004E68E9 /* SellViewController.swift */; };
 		9687FBA422C4F16B004E68E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9687FBA222C4F16B004E68E9 /* Main.storyboard */; };
 		9687FBA622C4F16C004E68E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9687FBA522C4F16C004E68E9 /* Assets.xcassets */; };
 		9687FBA922C4F16C004E68E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9687FBA722C4F16C004E68E9 /* LaunchScreen.storyboard */; };
@@ -29,8 +29,8 @@
 /* Begin PBXFileReference section */
 		9687FB9922C4F16B004E68E9 /* Supermarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Supermarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9687FB9C22C4F16B004E68E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9687FB9E22C4F16B004E68E9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		9687FBA022C4F16B004E68E9 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		9687FB9E22C4F16B004E68E9 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
+		9687FBA022C4F16B004E68E9 /* SellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
 		9687FBA322C4F16B004E68E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9687FBA522C4F16C004E68E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9687FBA822C4F16C004E68E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 		9687FBBE22C4F710004E68E9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9687FB9E22C4F16B004E68E9 /* FirstViewController.swift */,
-				9687FBA022C4F16B004E68E9 /* SecondViewController.swift */,
+				9687FB9E22C4F16B004E68E9 /* BuyViewController.swift */,
+				9687FBA022C4F16B004E68E9 /* SellViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -224,9 +224,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9687FBA122C4F16B004E68E9 /* SecondViewController.swift in Sources */,
+				9687FBA122C4F16B004E68E9 /* SellViewController.swift in Sources */,
 				9687FB9D22C4F16B004E68E9 /* AppDelegate.swift in Sources */,
-				9687FB9F22C4F16B004E68E9 /* FirstViewController.swift in Sources */,
+				9687FB9F22C4F16B004E68E9 /* BuyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

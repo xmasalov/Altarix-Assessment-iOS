@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SellViewController.swift
 //  Supermarket
 //
 //  Created by Ilya Masalov on 27/06/2019.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class SellViewController: UIViewController {
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
 }
-

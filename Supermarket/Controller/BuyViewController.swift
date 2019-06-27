@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  BuyViewController.swift
 //  Supermarket
 //
 //  Created by Ilya Masalov on 27/06/2019.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class BuyViewController: UIViewController {
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
 }
-
