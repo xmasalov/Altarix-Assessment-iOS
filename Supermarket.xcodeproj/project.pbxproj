@@ -14,6 +14,7 @@
 		9687FBA622C4F16C004E68E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9687FBA522C4F16C004E68E9 /* Assets.xcassets */; };
 		9687FBA922C4F16C004E68E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9687FBA722C4F16C004E68E9 /* LaunchScreen.storyboard */; };
 		9687FBB422C4F16C004E68E9 /* SupermarketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FBB322C4F16C004E68E9 /* SupermarketTests.swift */; };
+		9687FBCD22C50570004E68E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FBCC22C50570004E68E9 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		9687FBAF22C4F16C004E68E9 /* SupermarketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupermarketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9687FBB322C4F16C004E68E9 /* SupermarketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketTests.swift; sourceTree = "<group>"; };
 		9687FBB522C4F16C004E68E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9687FBCC22C50570004E68E9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				9687FB9E22C4F16B004E68E9 /* BuyViewController.swift */,
 				9687FBA022C4F16B004E68E9 /* SellViewController.swift */,
+				9687FBCC22C50570004E68E9 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			files = (
 				9687FBA122C4F16B004E68E9 /* SellViewController.swift in Sources */,
 				9687FB9D22C4F16B004E68E9 /* AppDelegate.swift in Sources */,
+				9687FBCD22C50570004E68E9 /* DetailViewController.swift in Sources */,
 				9687FB9F22C4F16B004E68E9 /* BuyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

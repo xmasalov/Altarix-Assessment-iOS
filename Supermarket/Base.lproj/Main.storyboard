@@ -38,6 +38,21 @@
             </objects>
             <point key="canvasLocation" x="1528.985507246377" y="-385.04464285714283"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="F3E-d7-IIs">
+            <objects>
+                <viewController id="KDb-eK-JKG" customClass="DetailViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rPs-IL-ucF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="sjT-Ex-QD3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LUA-Hu-1ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2296" y="0.0"/>
+        </scene>
         <!--Покупка-->
         <scene sceneID="b0E-2F-MgE">
             <objects>
