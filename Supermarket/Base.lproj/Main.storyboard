@@ -35,6 +35,7 @@
                     <navigationItem key="navigationItem" title="Покупка" id="3wT-Rp-7QT"/>
                     <connections>
                         <outlet property="tableView" destination="VOJ-20-6us" id="HBD-z9-GXf"/>
+                        <segue destination="KDb-eK-JKG" kind="show" identifier="DetailViewController" id="fw1-BC-VHk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -100,6 +101,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="NMf-WL-9s9" id="0IY-n3-Dp5"/>
+                        <segue destination="KDb-eK-JKG" kind="show" identifier="DetailViewController" id="4mV-Vi-zi5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -146,4 +148,7 @@
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="4mV-Vi-zi5"/>
+    </inferredMetricsTieBreakers>
 </document>
