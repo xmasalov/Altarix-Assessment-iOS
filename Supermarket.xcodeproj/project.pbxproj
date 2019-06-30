@@ -19,6 +19,7 @@
 		9687FBCB22C5054F004E68E9 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FBCA22C5054F004E68E9 /* ItemCell.swift */; };
 		9687FBCD22C50570004E68E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FBCC22C50570004E68E9 /* DetailViewController.swift */; };
 		9687FBD122C525DC004E68E9 /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FBD022C525DC004E68E9 /* ItemManager.swift */; };
+		96F58A2622C7B7D5005E06EE /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F58A2522C7B7D5005E06EE /* ItemsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		9687FBCA22C5054F004E68E9 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		9687FBCC22C50570004E68E9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9687FBD022C525DC004E68E9 /* ItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
+		96F58A2522C7B7D5005E06EE /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				9687FB9C22C4F16B004E68E9 /* AppDelegate.swift */,
 				9687FBBE22C4F710004E68E9 /* Controller */,
+				9687FBC122C4F78A004E68E9 /* ViewModel */,
 				9687FBBF22C4F71C004E68E9 /* Model */,
 				9687FBC022C4F727004E68E9 /* View */,
 				9687FBA222C4F16B004E68E9 /* Main.storyboard */,
@@ -136,6 +139,21 @@
 				9687FBCA22C5054F004E68E9 /* ItemCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9687FBC122C4F78A004E68E9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				96F58A2522C7B7D5005E06EE /* ItemsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9F328F64D761C362ABC823E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F58A2622C7B7D5005E06EE /* ItemsViewModel.swift in Sources */,
 				9687FBC322C5029B004E68E9 /* Item.swift in Sources */,
 				9687FBA122C4F16B004E68E9 /* SellViewController.swift in Sources */,
 				9687FB9D22C4F16B004E68E9 /* AppDelegate.swift in Sources */,
