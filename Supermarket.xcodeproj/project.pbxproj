@@ -15,6 +15,8 @@
 		9687FBA922C4F16C004E68E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9687FBA722C4F16C004E68E9 /* LaunchScreen.storyboard */; };
 		9687FBB422C4F16C004E68E9 /* SupermarketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FBB322C4F16C004E68E9 /* SupermarketTests.swift */; };
 		9687FBC322C5029B004E68E9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FBC222C5029B004E68E9 /* Item.swift */; };
+		9687FBC922C5053B004E68E9 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9687FBC822C5053B004E68E9 /* ItemCell.xib */; };
+		9687FBCB22C5054F004E68E9 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FBCA22C5054F004E68E9 /* ItemCell.swift */; };
 		9687FBCD22C50570004E68E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FBCC22C50570004E68E9 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		9687FBB322C4F16C004E68E9 /* SupermarketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketTests.swift; sourceTree = "<group>"; };
 		9687FBB522C4F16C004E68E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9687FBC222C5029B004E68E9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9687FBC822C5053B004E68E9 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		9687FBCA22C5054F004E68E9 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		9687FBCC22C50570004E68E9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +129,8 @@
 		9687FBC022C4F727004E68E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9687FBC822C5053B004E68E9 /* ItemCell.xib */,
+				9687FBCA22C5054F004E68E9 /* ItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9687FBC922C5053B004E68E9 /* ItemCell.xib in Resources */,
 				9687FBA922C4F16C004E68E9 /* LaunchScreen.storyboard in Resources */,
 				9687FBA622C4F16C004E68E9 /* Assets.xcassets in Resources */,
 				9687FBA422C4F16B004E68E9 /* Main.storyboard in Resources */,
@@ -235,6 +242,7 @@
 				9687FB9D22C4F16B004E68E9 /* AppDelegate.swift in Sources */,
 				9687FBCD22C50570004E68E9 /* DetailViewController.swift in Sources */,
 				9687FB9F22C4F16B004E68E9 /* BuyViewController.swift in Sources */,
+				9687FBCB22C5054F004E68E9 /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
