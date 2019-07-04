@@ -12,10 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
+    var isFirstTime: Bool {
+        get {
+            return UserDefaults.standard.value(forKey: "isFirstTime") as? Bool ?? true
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: "isFirstTime")
+        }
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if isFirstTime {
+            isFirstTime = false
+            RealmItemManager.addSampleData()
+        }
+        
         return true
     }
 
