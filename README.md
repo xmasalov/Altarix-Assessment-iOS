@@ -1,10 +1,10 @@
 # Altarix Assessment iOS
 Тестовое задание для кандидата на должность iOS-разработчика  
 
+MVVM · Realm · Bond
+
 Автор решения: Илья Масалов  
 Эл. почта: xmasalov@gmail.com
-
-MVVM · Realm · Bond
 
 ![Altarix Assessment iOS](https://github.com/xmasalov/Altarix-Assessment-iOS/blob/master/Screenshot.png)
 
