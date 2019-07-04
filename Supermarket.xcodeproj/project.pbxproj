@@ -19,7 +19,7 @@
 		9687FBC922C5053B004E68E9 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9687FBC822C5053B004E68E9 /* ItemCell.xib */; };
 		9687FBCB22C5054F004E68E9 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FBCA22C5054F004E68E9 /* ItemCell.swift */; };
 		9687FBCD22C50570004E68E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FBCC22C50570004E68E9 /* DetailViewController.swift */; };
-		9687FBD122C525DC004E68E9 /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FBD022C525DC004E68E9 /* ItemManager.swift */; };
+		9687FBD122C525DC004E68E9 /* RealmItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FBD022C525DC004E68E9 /* RealmItemManager.swift */; };
 		96F58A2622C7B7D5005E06EE /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F58A2522C7B7D5005E06EE /* ItemsViewModel.swift */; };
 		9BE6CE0EC41AEB4F724996BA /* Pods_Supermarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30465CF61F956BE34BF78DCA /* Pods_Supermarket.framework */; };
 		AC88057671E2878ED2A39F6E /* Pods_SupermarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F69A4ECCC917355112D46F /* Pods_SupermarketTests.framework */; };
@@ -58,7 +58,7 @@
 		9687FBC822C5053B004E68E9 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		9687FBCA22C5054F004E68E9 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		9687FBCC22C50570004E68E9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		9687FBD022C525DC004E68E9 /* ItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
+		9687FBD022C525DC004E68E9 /* RealmItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmItemManager.swift; sourceTree = "<group>"; };
 		96F58A2522C7B7D5005E06EE /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,7 +140,7 @@
 		9687FBBF22C4F71C004E68E9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9687FBD022C525DC004E68E9 /* ItemManager.swift */,
+				9687FBD022C525DC004E68E9 /* RealmItemManager.swift */,
 				9687FBC222C5029B004E68E9 /* Item.swift */,
 			);
 			path = Model;
@@ -361,7 +361,7 @@
 				9687FBCD22C50570004E68E9 /* DetailViewController.swift in Sources */,
 				9687FB9F22C4F16B004E68E9 /* BuyViewController.swift in Sources */,
 				9687FBCB22C5054F004E68E9 /* ItemCell.swift in Sources */,
-				9687FBD122C525DC004E68E9 /* ItemManager.swift in Sources */,
+				9687FBD122C525DC004E68E9 /* RealmItemManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
