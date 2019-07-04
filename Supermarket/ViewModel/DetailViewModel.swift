@@ -19,16 +19,15 @@ class DetailViewModel {
     let departmentAlertMessage = "Выберите подходящую категорию"
     let departmentAlertActionTitle = "Продолжить"
     
-    private(set) var item: Item?
-    private(set) var itemManager: ItemManager
+    private let item: Item?
+    private let category: Item.Category
+    private let itemManager: ItemManager
     
     private(set) lazy var itemName = Observable<String?>(item?.name ?? "")
     private(set) lazy var itemDepartment = Observable<Item.Department>(item?.department ?? .none)
     private(set) lazy var itemPrice = Observable<String?>(item?.price.description ?? "")
     
     private(set) var allowedToSaveEdits = Observable<Bool>(false)
-    
-    private let category: Item.Category
     
     init(item: Item?, itemManager: ItemManager, category: Item.Category) {
         self.item = item
@@ -37,6 +36,18 @@ class DetailViewModel {
         
         addBindings()
     }
+}
+
+// MARK: - Computed properties
+extension DetailViewModel {
+    
+    var creatingItem: Bool {
+        return item == nil
+    }
+}
+
+// MARK: - Methods
+extension DetailViewModel {
     
     func addBindings() {
         combineLatest(itemName, itemPrice) { name, price in
@@ -59,10 +70,6 @@ class DetailViewModel {
             itemManager.add(item: item)
         }
     }
-}
-
-// MARK: - Methods
-extension DetailViewModel {
     
     func shouldChangeCharactersIn(text oldText: String, range: NSRange, replacementString string: String) -> Bool {
         guard let r = Range(range, in: oldText) else {

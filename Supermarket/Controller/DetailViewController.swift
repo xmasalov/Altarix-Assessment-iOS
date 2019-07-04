@@ -105,7 +105,7 @@ private extension DetailViewController {
         navigationItem.rightBarButtonItem = editButtonItem
         editButtonItem.title = viewModel.editStateTitle
         
-        if viewModel.item == nil {
+        if viewModel.creatingItem {
             isEditing = true
         }
     }
