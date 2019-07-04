@@ -11,7 +11,7 @@ import UIKit
 class ItemCell: UITableViewCell {
     
     // MARK: - Properties
-    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet weak private var nameLabel: UILabel!
 }
 
 // MARK: - Methods
