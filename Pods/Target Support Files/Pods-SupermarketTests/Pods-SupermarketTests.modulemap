@@ -1,0 +1,6 @@
+framework module Pods_SupermarketTests {
+  umbrella header "Pods-SupermarketTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
