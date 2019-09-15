@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9606961F22CB5E610086D826 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9606961E22CB5E610086D826 /* Helpers.swift */; };
+		96402547232EF02500B88DC3 /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96402546232EF02500B88DC3 /* ItemManager.swift */; };
+		96402549232EF34900B88DC3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96402548232EF34900B88DC3 /* ViewModel.swift */; };
+		9640254B232EF4CA00B88DC3 /* ItemsViewModelBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9640254A232EF4C900B88DC3 /* ItemsViewModelBased.swift */; };
+		9640254D232EF50000B88DC3 /* DetailViewModelBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9640254C232EF50000B88DC3 /* DetailViewModelBased.swift */; };
 		96765F5722CA2E3900EA2924 /* DepartmentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96765F5622CA2E3900EA2924 /* DepartmentStackView.swift */; };
 		96765F5922CA318A00EA2924 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96765F5822CA318A00EA2924 /* DetailViewModel.swift */; };
 		9687FB9D22C4F16B004E68E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687FB9C22C4F16B004E68E9 /* AppDelegate.swift */; };
@@ -45,6 +49,10 @@
 		62F69A4ECCC917355112D46F /* Pods_SupermarketTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SupermarketTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F1F9F178D94A94E87653A48 /* Pods-SupermarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupermarketTests.debug.xcconfig"; path = "Target Support Files/Pods-SupermarketTests/Pods-SupermarketTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9606961E22CB5E610086D826 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		96402546232EF02500B88DC3 /* ItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
+		96402548232EF34900B88DC3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		9640254A232EF4C900B88DC3 /* ItemsViewModelBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModelBased.swift; sourceTree = "<group>"; };
+		9640254C232EF50000B88DC3 /* DetailViewModelBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelBased.swift; sourceTree = "<group>"; };
 		96765F5622CA2E3900EA2924 /* DepartmentStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentStackView.swift; sourceTree = "<group>"; };
 		96765F5822CA318A00EA2924 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		9687FB9922C4F16B004E68E9 /* Supermarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Supermarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9640254E232EF55600B88DC3 /* ViewModelBased */ = {
+			isa = PBXGroup;
+			children = (
+				9640254A232EF4C900B88DC3 /* ItemsViewModelBased.swift */,
+				9640254C232EF50000B88DC3 /* DetailViewModelBased.swift */,
+			);
+			path = ViewModelBased;
+			sourceTree = "<group>";
+		};
 		9687FB9022C4F16B004E68E9 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +162,7 @@
 		9687FBBF22C4F71C004E68E9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				96402546232EF02500B88DC3 /* ItemManager.swift */,
 				9687FBD022C525DC004E68E9 /* RealmItemManager.swift */,
 				9687FBC222C5029B004E68E9 /* Item.swift */,
 			);
@@ -164,6 +182,8 @@
 		9687FBC122C4F78A004E68E9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9640254E232EF55600B88DC3 /* ViewModelBased */,
+				96402548232EF34900B88DC3 /* ViewModel.swift */,
 				96F58A2522C7B7D5005E06EE /* ItemsViewModel.swift */,
 				96765F5822CA318A00EA2924 /* DetailViewModel.swift */,
 			);
@@ -365,10 +385,14 @@
 				96765F5922CA318A00EA2924 /* DetailViewModel.swift in Sources */,
 				9606961F22CB5E610086D826 /* Helpers.swift in Sources */,
 				9687FB9D22C4F16B004E68E9 /* AppDelegate.swift in Sources */,
+				9640254D232EF50000B88DC3 /* DetailViewModelBased.swift in Sources */,
+				96402549232EF34900B88DC3 /* ViewModel.swift in Sources */,
+				9640254B232EF4CA00B88DC3 /* ItemsViewModelBased.swift in Sources */,
 				9687FBCD22C50570004E68E9 /* DetailViewController.swift in Sources */,
 				96765F5722CA2E3900EA2924 /* DepartmentStackView.swift in Sources */,
 				9687FB9F22C4F16B004E68E9 /* BuyViewController.swift in Sources */,
 				9687FBCB22C5054F004E68E9 /* ItemCell.swift in Sources */,
+				96402547232EF02500B88DC3 /* ItemManager.swift in Sources */,
 				9687FBD122C525DC004E68E9 /* RealmItemManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

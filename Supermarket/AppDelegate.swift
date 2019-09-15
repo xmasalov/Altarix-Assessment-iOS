@@ -13,13 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    var isFirstTime: Bool {
-        get {
-            return UserDefaults.standard.value(forKey: "isFirstTime") as? Bool ?? true
-        }
-        set {
-            UserDefaults.standard.setValue(newValue, forKey: "isFirstTime")
-        }
+    private var isFirstTime: Bool {
+        get { return UserDefaults.standard.value(forKey: "isFirstTime") as? Bool ?? true }
+        set { UserDefaults.standard.setValue(newValue, forKey: "isFirstTime") }
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -38,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let barViewControllers = tabBarViewController.viewControllers {
             for viewController in barViewControllers {
                 if let navigationViewController = viewController as? UINavigationController,
-                    let viewController = navigationViewController.topViewController as? ItemsViewModelCompatible {
+                    let viewController = navigationViewController.topViewController as? ItemsViewModelBased {
                     
                     viewController.viewModel = viewModel
                 }

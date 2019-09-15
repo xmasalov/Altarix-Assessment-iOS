@@ -1,5 +1,5 @@
 //
-//  BuyViewModel.swift
+//  ItemsViewModel.swift
 //  Supermarket
 //
 //  Created by Ilya Masalov on 27/06/2019.
@@ -9,7 +9,7 @@
 import ReactiveKit
 import Bond
 
-class ItemsViewModel {
+class ItemsViewModel: ViewModel {
     
     // MARK: - Enums
     enum Filter: String, CaseIterable {
@@ -30,11 +30,11 @@ class ItemsViewModel {
     let departmentAlertMessage = "Выберите подходящую категорию"
     let departmentAlertActionTitle = "Выбрать"
     
-    let itemManager: ItemManager
+    internal let itemManager: ItemManager
     
     let itemsToBuy = MutableObservableArray<Item>()
     let itemsToSell = MutableObservableArray<Item>()
-    let bag = DisposeBag()
+    private let bag = DisposeBag()
     
     var selectedFilter: Filter = .all {
         didSet {
@@ -50,25 +50,26 @@ class ItemsViewModel {
     }
 }
 
-// MARK: - Methods
-extension ItemsViewModel {
-    
-    func addItem(item: Item) {
-        itemManager.add(item: item)
-    }
-    
-    // TODO: Implement remove
-}
-
 // MARK: - Private methods
-extension ItemsViewModel {
+private extension ItemsViewModel {
     
     func bindModel() {
-        itemManager.items.filterCollection({ $0.category == .buy }).suppressError(logging: true).bind(to: itemsToBuy).dispose(in: bag)
+        itemManager.items.filterCollection({ $0.category == .buy })
+            .suppressError(logging: true)
+            .bind(to: itemsToBuy)
+            .dispose(in: bag)
         
-        itemManager.items.filterCollection({ [unowned self] in
-            return self.selectedFilter == .all ? $0.category == .sell : $0.category == .sell && $0.department.title == self.selectedFilter.title
-        }).suppressError(logging: true).bind(to: itemsToSell).dispose(in: bag)
+        itemManager.items.filterCollection({ [weak self] in
+            guard let self = self else { return false }
+            
+            return self.selectedFilter == .all ?
+                $0.category == .sell :
+                $0.category == .sell && $0.department.title == self.selectedFilter.title
+            
+        })
+            .suppressError(logging: true)
+            .bind(to: itemsToSell)
+            .dispose(in: bag)
     }
     
     func disposeModel() {

@@ -10,7 +10,7 @@ import Foundation
 import ReactiveKit
 import Bond
 
-class DetailViewModel {
+class DetailViewModel: ViewModel {
     
     // MARK: - Properties
     let editStateTitle = "Редактировать"
@@ -21,7 +21,7 @@ class DetailViewModel {
     
     private let item: Item?
     private let category: Item.Category
-    private let itemManager: ItemManager
+    internal let itemManager: ItemManager
     
     private(set) lazy var itemName = Observable<String?>(item?.name ?? "")
     private(set) lazy var itemDepartment = Observable<Item.Department>(item?.department ?? .none)
@@ -48,15 +48,6 @@ extension DetailViewModel {
 
 // MARK: - Methods
 extension DetailViewModel {
-    
-    func addBindings() {
-        combineLatest(itemName, itemPrice) { name, price in
-            let nameFilled = !(name?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
-            let priceFilled = !(price?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
-            
-            return nameFilled && priceFilled
-            }.bind(to: allowedToSaveEdits)
-    }
     
     func writeChanges() {
         if let item = item {
@@ -102,5 +93,18 @@ extension DetailViewModel {
         numberFormatter.maximumFractionDigits = 2
         
         return numberFormatter.string(from: value as! NSNumber)
+    }
+}
+
+// MARK: - Private methods
+private extension DetailViewModel {
+    
+    func addBindings() {
+        combineLatest(itemName, itemPrice) { name, price in
+            let nameFilled = !(name?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
+            let priceFilled = !(price?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
+            
+            return nameFilled && priceFilled
+            }.bind(to: allowedToSaveEdits)
     }
 }

@@ -49,10 +49,9 @@ class Item: Object {
         set { realmdepartment = newValue.rawValue }
     }
     
-    @objc dynamic var id = UUID().uuidString
-    @objc dynamic var date = Date().description
+    @objc dynamic private var id = UUID().uuidString
+    @objc dynamic private var date = Date().description
     
-    // MARK: - Methods
     override static func primaryKey() -> String? {
         return "id"
     }

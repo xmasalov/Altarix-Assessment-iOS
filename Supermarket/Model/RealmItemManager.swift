@@ -1,5 +1,5 @@
 //
-//  ItemManager.swift
+//  RealmItemManager.swift
 //  Supermarket
 //
 //  Created by Ilya Masalov on 27/06/2019.
@@ -10,20 +10,10 @@ import Bond
 import ReactiveKit
 import RealmSwift
 
-protocol ItemManager {
-    
-    // FIXME: Items type
-    var items: Signal<OrderedCollectionChangeset<Results<Item>>, NSError> { get set }
-    
-    func update(item: Item, name: String, price: Double, department: Item.Department, category: Item.Category)
-    func add(item: Item)
-    func remove(item: Item)
-}
-
 class RealmItemManager: ItemManager {
     
     // MARK: - Properties
-    let realm = try! Realm()
+    private let realm = try! Realm()
     lazy var items = realm.objects(Item.self).sorted(byKeyPath: "date", ascending: false).toChangesetSignal()
 }
 
@@ -40,7 +30,7 @@ extension RealmItemManager {
     }
     
     func update(item: Item, name: String, price: Double, department: Item.Department, category: Item.Category) {
-        DispatchQueue.main.async { [unowned self] in
+        DispatchQueue.main.async {
             try! self.realm.write {
                 item.setValue(name, forKey: "name")
                 item.setValue(price, forKey: "price")
@@ -51,7 +41,7 @@ extension RealmItemManager {
     }
     
     func remove(item: Item) {
-        DispatchQueue.main.async { [unowned self] in
+        DispatchQueue.main.async {
             try! self.realm.write {
                 self.realm.delete(item)
             }

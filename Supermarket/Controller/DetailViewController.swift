@@ -10,7 +10,7 @@ import UIKit
 import SkyFloatingLabelTextField
 import RLBAlertsPickers
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, DetailViewModelBased {
     
     // MARK: - Properties
     @IBOutlet weak private var nameTextField: SkyFloatingLabelTextField!
@@ -22,10 +22,9 @@ class DetailViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        addObservers()
-        bindViewModel()
         setDelegates()
+        bindViewModel()
+        addObservers()
         setEditingProperties()
     }
     
@@ -47,22 +46,23 @@ class DetailViewController: UIViewController {
     }
 }
 
-// - MARK: UITextFieldDelegate
+// MARK: - UITextFieldDelegate
 extension DetailViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if textField == priceTextField, let text = textField.text {
+        if priceTextField == textField, let text = textField.text {
             return viewModel.shouldChangeCharactersIn(text: text, range: range, replacementString: string)
         }
+        
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == nameTextField {
+        if nameTextField == textField {
             textField.text = textField.text?.trimmingCharacters(in: .whitespaces)
         }
         
-        if textField == priceTextField {
+        if priceTextField == textField {
             textField.text = viewModel.priceFormatter(value: Double(textField.text ?? ""))
         }
     }
@@ -80,11 +80,12 @@ extension DetailViewController: UITextFieldDelegate {
     }
 }
 
-// - MARK: Private methods
+// MARK: - Private methods
 private extension DetailViewController {
     
     func addObservers() {
-        _ = departmentStackView.reactive.tapGesture().observeNext { [unowned self] _ in
+        _ = departmentStackView.reactive.tapGesture().observeNext { [weak self] _ in
+            guard let self = self else { return }
             self.presentDepartmentPicker()
         }
     }
@@ -118,16 +119,19 @@ private extension DetailViewController {
         
         let index = PickerViewViewController.Index(column: 0, row: viewModel.itemDepartment.value.index ?? 0)
 
-        alert.addPickerView(values: [stringValues], initialSelection: index) { [unowned self] vc, picker, index, values in
-            
+        alert.addPickerView(values: [stringValues], initialSelection: index) { [weak self] vc, picker, index, values in
+            guard let self = self else { return }
             self.viewModel.itemDepartment.value = enumValues[index.row]
         }
         
-        alert.addAction(title: viewModel.departmentAlertActionTitle) { [unowned self] _ in
+        alert.addAction(title: viewModel.departmentAlertActionTitle) { [weak self] _ in
+            guard let self = self else { return }
             self.priceTextField.becomeFirstResponder()
         }
         
-        alert.show { [unowned self] in
+        alert.show { [weak self] in
+            guard let self = self else { return }
+            
             if !self.departmentStackView.specified {
                 self.viewModel.itemDepartment.value = enumValues[index.row]
             }

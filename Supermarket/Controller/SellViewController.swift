@@ -9,7 +9,7 @@
 import UIKit
 import RLBAlertsPickers
 
-class SellViewController: UIViewController, ItemsViewModelCompatible {
+class SellViewController: UIViewController, ItemsViewModelBased {
     
     // MARK: - Properties
     @IBOutlet weak private var tableView: UITableView!
@@ -21,10 +21,11 @@ class SellViewController: UIViewController, ItemsViewModelCompatible {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        addObservers()
         bindViewModel()
+        addObservers()
     }
     
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? DetailViewController {
             let item = sender as? Item
@@ -38,11 +39,13 @@ class SellViewController: UIViewController, ItemsViewModelCompatible {
 private extension SellViewController {
     
     func addObservers() {
-        _ = addButton.reactive.tap.observeNext { [unowned self] in
+        _ = addButton.reactive.tap.observeNext { [weak self] in
+            guard let self = self else { return }
             self.performSegue(withIdentifier: "DetailViewController", sender: nil)
         }
         
-        _ = filterButton.reactive.tap.observeNext { [unowned self] in
+        _ = filterButton.reactive.tap.observeNext { [weak self] in
+            guard let self = self else { return }
             self.presentDepartmentFilterPicker()
         }
     }
@@ -52,7 +55,8 @@ private extension SellViewController {
             cell.configure(name: item.name)
             
             cell.reactive.bag.dispose()
-            _ = cell.reactive.tapGesture().observeNext { [unowned self] _ in
+            _ = cell.reactive.tapGesture().observeNext { [weak self] _ in
+                guard let self = self else { return }
                 self.performSegue(withIdentifier: "DetailViewController", sender: item)
                 
                 }.dispose(in: cell.reactive.bag)
@@ -67,7 +71,8 @@ private extension SellViewController {
         
         let index = PickerViewViewController.Index(column: 0, row: viewModel.selectedFilter.index ?? 0)
         
-        alert.addPickerView(values: [stringValues], initialSelection: index) { [unowned self] vc, picker, index, values in
+        alert.addPickerView(values: [stringValues], initialSelection: index) { [weak self] vc, picker, index, values in
+            guard let self = self else { return }
             
             self.viewModel.selectedFilter = enumValues[index.row]
             self.filterButton.title = enumValues[index.row].title

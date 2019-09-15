@@ -8,11 +8,7 @@
 
 import UIKit
 
-protocol ItemsViewModelCompatible: class {
-    var viewModel: ItemsViewModel! { get set }
-}
-
-class BuyViewController: UIViewController, ItemsViewModelCompatible {
+class BuyViewController: UIViewController, ItemsViewModelBased {
     
     // MARK: - Properties
     @IBOutlet weak private var tableView: UITableView!
@@ -23,10 +19,11 @@ class BuyViewController: UIViewController, ItemsViewModelCompatible {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        addObservers()
         bindViewModel()
+        addObservers()
     }
     
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? DetailViewController {
             let item = sender as? Item
@@ -40,7 +37,8 @@ class BuyViewController: UIViewController, ItemsViewModelCompatible {
 private extension BuyViewController {
     
     func addObservers() {
-        _ = addButton.reactive.tap.observeNext { [unowned self] in
+        _ = addButton.reactive.tap.observeNext { [weak self] in
+            guard let self = self else { return }
             self.performSegue(withIdentifier: "DetailViewController", sender: nil)
         }
     }
@@ -50,7 +48,8 @@ private extension BuyViewController {
             cell.configure(name: item.name)
             
             cell.reactive.bag.dispose()
-            _ = cell.reactive.tapGesture().observeNext { [unowned self] _ in
+            _ = cell.reactive.tapGesture().observeNext { [weak self] _ in
+                guard let self = self else { return }
                 self.performSegue(withIdentifier: "DetailViewController", sender: item)
                 
                 }.dispose(in: cell.reactive.bag)
